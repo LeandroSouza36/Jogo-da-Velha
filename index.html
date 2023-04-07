@@ -10,36 +10,50 @@
 </head>
 <body>
 <div class="row  d-flex justify-content-center">
-        <div id="quadro1" class="col-md-6  border " style="width:200px; height:200px">
-            <button id="butao" style="display:none">O</button>
+        <div id="quadro1" class="col-md-4  border " style="width:200px; height:200px;">
+            <div id="x1" style="text-align: center ; font-size:150px; display:none">X</div>
         </div>
 
-        <div id="quadro2" class="col-md-6  border " style="width:200px; height:200px">
+        <div id="quadro2" class="col-md-4  border " style="width:200px; height:200px">
+            <div id="x2" style="text-align: center ; font-size:150px; display:none">X</div>
         </div>
 
-        <div id="quadro3" class="col-md-6  border " style="width:200px; height:200px">
+        <div id="quadro3" class="col-md-4  border " style="width:200px; height:200px">
+            <div id="x3" style="text-align: center ; font-size:150px; display:none">X</div>
         </div>
 </div>
 
 <div class="row  d-flex justify-content-center">
     <div id="quadro4" class="col-md-6  border " style="width:200px; height:200px">
+        <div id="x4" style="text-align: center ; font-size:150px; display:none">X</div>
     </div>
 
     <div id="quadro5" class="col-md-6  border " style="width:200px; height:200px">
+        <div id="x5" style="text-align: center ; font-size:150px; display:none">X</div>
     </div>
 
     <div id="quadro6" class="col-md-6  border " style="width:200px; height:200px">
+        <div id="x6" style="text-align: center ; font-size:150px; display:none">X</div>
     </div>
 </div>
 
 <div class="row  d-flex justify-content-center">
     <div id="quadro7" class="col-md-6  border " style="width:200px; height:200px">
+        <div id="x7" style="text-align: center ; font-size:150px; display:none">X</div>
     </div>
 
     <div id="quadro8" class="col-md-6  border " style="width:200px; height:200px">
+        <div id="x8" style="text-align: center ; font-size:150px; display:none">X</div>
     </div>
 
     <div id="quadro9" class="col-md-6  border " style="width:200px; height:200px">
+        <div id="x9" style="text-align: center ; font-size:150px; display:none">X</div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <center>sdsdsdsdsd</center>
     </div>
 </div>
 
@@ -51,54 +65,767 @@
 </body>
 
 <script>
-    var quadro1 = document.getElementById("quadro1")
+    var jogador = "X"
+    var jogada = 1
+    var jogo = 0
+    var combinacao = [0];
+    var contc = 0
+    var confirmarBloco = 0;
 
-    quadro1.onmouseover=function(){this.style.background="#E3E5FF"}
-    quadro1.onmouseout=function(){this.style.background="white"}
+    var bloco1 = 0
+    var bloco2 = 0
+    var bloco3 = 0
+    var bloco4 = 0
+    var bloco5 = 0
+    var bloco6 = 0
+    var bloco7 = 0
+    var bloco8 = 0
+    var bloco9 = 0 
+
+
+    var quadro1 = document.getElementById("quadro1")
+    var x1 = document.getElementById("x1")
+    var x2 = document.getElementById("x2")
+    var x3 = document.getElementById("x3")
+    var x4 = document.getElementById("x4")
+    var x5 = document.getElementById("x5")
+    var x6 = document.getElementById("x6")
+    var x7 = document.getElementById("x7")
+    var x8 = document.getElementById("x8")
+    var x9 = document.getElementById("x9")
+
+    
+
+    quadro1.onmouseover=function(){
+        if(jogo == 0){
+        this.style.background="#E3E5FF"
+        }
+    }
+    quadro1.onmouseout=function(){
+        if(jogo == 0){
+        this.style.background="white"
+        }
+    }
 
     quadro1.onclick=function(){
-       butao.style.display = 'block';
+        if(bloco1==0){
+            x1.style.display = 'block';
+            console.log("---------------------------------------------------------")
+            console.log("jogada : "+ jogada)
+            console.log("jogador marcou o " + jogador )
+            bloco1 = 1
+            console.log(bloco1)
+            jogada = jogada + 1
+            jogador = "O"
+            console.log("---------------------------------------------------------")
+            confirmarBloco = 1;
+            Combinacao()
+            venceu()
+            ia()
+            
+        }
+
     }
+
+    
 
     var quadro2 = document.getElementById("quadro2")
 
-    quadro2.onmouseover=function(){this.style.background="#E3E5FF"}
-    quadro2.onmouseout=function(){this.style.background="white"}
+    quadro2.onmouseover=function(){
+        if(jogo == 0){
+        this.style.background="#E3E5FF"
+        }
+    }
+    quadro2.onmouseout=function(){
+        if(jogo == 0){
+        this.style.background="white"
+        }
+    }
+
+
+    quadro2.onclick=function(){
+        if(bloco2==0){
+            x2.style.display = 'block';
+            console.log("---------------------------------------------------------")
+            console.log("jogada : "+ jogada)
+            console.log("jogador marcou o " + jogador )
+            bloco2 = 1
+            console.log(bloco2)
+            jogada = jogada + 1
+            jogador = "O"
+            console.log("---------------------------------------------------------")
+            confirmarBloco = 2;
+            venceu()
+            Combinacao()
+            ia()
+            
+        }
+
+    }
 
     var quadro3 = document.getElementById("quadro3")
 
-    quadro3.onmouseover=function(){this.style.background="#E3E5FF"}
-    quadro3.onmouseout=function(){this.style.background="white"}
+    quadro3.onmouseover=function(){
+        if(jogo == 0){
+        this.style.background="#E3E5FF"
+        }
+    }
+    quadro3.onmouseout=function(){
+        if(jogo == 0){
+        this.style.background="white"
+        }
+    }
+
+    quadro3.onclick=function(){
+            if(bloco3==0){
+                x3.style.display = 'block';
+                console.log("---------------------------------------------------------")
+                console.log("jogada : "+ jogada)
+                console.log("jogador marcou o " + jogador )
+                bloco3 = 1
+                console.log(bloco3)
+                jogada = jogada + 1
+                jogador = "O"
+                console.log("---------------------------------------------------------")
+                confirmarBloco = 3;
+                Combinacao()
+                venceu()
+                ia()
+                venceu()
+                
+            }
+
+        }
+
 
     var quadro4 = document.getElementById("quadro4")
 
-    quadro4.onmouseover=function(){this.style.background="#E3E5FF"}
-    quadro4.onmouseout=function(){this.style.background="white"}
+    quadro4.onmouseover=function(){
+        if(jogo == 0){
+        this.style.background="#E3E5FF"
+        }
+    }
+    quadro4.onmouseout=function(){
+        if(jogo == 0){
+        this.style.background="white"
+        }
+    
+    }
+
+    quadro4.onclick=function(){
+        if(bloco4==0){
+            x4.style.display = 'block';
+            console.log("---------------------------------------------------------")
+            console.log("jogada : "+ jogada)
+            console.log("jogador marcou o " + jogador )
+            bloco4 = 1
+            console.log(bloco4)
+            jogada = jogada + 1
+            jogador = "O"
+            console.log("---------------------------------------------------------")
+            confirmarBloco = 4;
+            Combinacao()
+            venceu()
+            ia()
+            
+        }
+
+    }
 
     var quadro5 = document.getElementById("quadro5")
 
-    quadro5.onmouseover=function(){this.style.background="#E3E5FF"}
+    quadro5.onmouseover=function(){
+        if(jogo == 0){
+        this.style.background="#E3E5FF"
+        }
+    
+    }
     quadro5.onmouseout=function(){this.style.background="white"}
+
+    quadro5.onclick=function(){
+        if(bloco5==0){
+            x5.style.display = 'block';
+            console.log("---------------------------------------------------------")
+            console.log("jogada : "+ jogada)
+            console.log("jogador marcou o " + jogador )
+            bloco5 = 1
+            console.log(bloco5)
+            jogada = jogada + 1
+            jogador = "O"
+            console.log("---------------------------------------------------------")
+            confirmarBloco = 5;
+            Combinacao()
+            venceu()
+            ia()
+            
+        }
+
+    }
 
     var quadro6 = document.getElementById("quadro6")
 
-    quadro6.onmouseover=function(){this.style.background="#E3E5FF"}
-    quadro6.onmouseout=function(){this.style.background="white"}
+    quadro6.onmouseover=function(){
+        if(jogo == 0){
+        this.style.background="#E3E5FF"
+        }
+    }
+    quadro6.onmouseout=function(){
+        if(jogo == 0){
+        this.style.background="white"
+        }
+    }
+
+
+        quadro6.onclick=function(){
+        if(bloco6==0){
+            x6.style.display = 'block';
+            console.log("---------------------------------------------------------")
+            console.log("jogada : "+ jogada)
+            console.log("jogador marcou o " + jogador )
+            bloco6 = 1
+            console.log(bloco6)
+            jogada = jogada + 1
+            jogador = "O"
+            console.log("---------------------------------------------------------")
+            confirmarBloco = 6;
+            Combinacao()
+            venceu()
+            ia()
+            
+        }
+
+    }
 
     var quadro7 = document.getElementById("quadro7")
 
-    quadro7.onmouseover=function(){this.style.background="#E3E5FF"}
-    quadro7.onmouseout=function(){this.style.background="white"}
+    quadro7.onmouseover=function(){
+        if(jogo == 0){
+        this.style.background="#E3E5FF"
+        }
+    }
+    quadro7.onmouseout=function(){
+        if(jogo == 0){
+        this.style.background="white"
+        }
+    }
+
+
+        quadro7.onclick=function(){
+        if(bloco7==0){
+            x7.style.display = 'block';
+            console.log("---------------------------------------------------------")
+            console.log("jogada : "+ jogada)
+            console.log("jogador marcou o " + jogador )
+            bloco7 = 1
+            console.log(bloco7)
+            jogada = jogada + 1
+            jogador = "O"
+            console.log("---------------------------------------------------------")
+            confirmarBloco = 7;
+            Combinacao()
+            venceu()
+            ia()
+            
+        }
+
+    }
 
     var quadro8 = document.getElementById("quadro8")
 
-    quadro8.onmouseover=function(){this.style.background="#E3E5FF"}
-    quadro8.onmouseout=function(){this.style.background="white"}
+    quadro8.onmouseover=function(){
+        if(jogo == 0){
+        this.style.background="#E3E5FF"
+        }
+    }
+    quadro8.onmouseout=function(){
+        if(jogo == 0){
+        this.style.background="white"
+        }
+    }
+
+
+        quadro8.onclick=function(){
+        if(bloco8==0){
+            x8.style.display = 'block';
+            console.log("---------------------------------------------------------")
+            console.log("jogada : "+ jogada)
+            console.log("jogador marcou o " + jogador )
+            bloco8 = 1
+            console.log(bloco8)
+            jogada = jogada + 1
+            jogador = "O"
+            console.log("---------------------------------------------------------")
+            confirmarBloco = 8;
+            Combinacao()
+            venceu()
+            ia()
+            
+        }
+
+    }
 
     var quadro9 = document.getElementById("quadro9")
 
-    quadro9.onmouseover=function(){this.style.background="#E3E5FF"}
-    quadro9.onmouseout=function(){this.style.background="white"}
+    quadro9.onmouseover=function(){
+        if(jogo == 0){
+        this.style.background="#E3E5FF"
+        }
+    }
+    quadro9.onmouseout=function(){
+        if(jogo == 0){
+        this.style.background="white"
+        }
+    }
+
+
+        quadro9.onclick=function(){
+        if(bloco9==0){
+            x9.style.display = 'block';
+            console.log("---------------------------------------------------------")
+            console.log("jogada : "+ jogada)
+            console.log("jogador marcou o " + jogador )
+            bloco9 = 1
+            console.log(bloco9)
+            jogada = jogada + 1
+            jogador = "O"
+            console.log("---------------------------------------------------------")
+            confirmarBloco = 9;
+            Combinacao()
+            venceu()
+            ia()
+            
+        }
+
+    }
+
+
+
+
+
+    function ia(){
+
+        if(jogo == 1){
+            console.log("hello")
+        }
+        else
+        if(bloco1 == 0){
+            x1.style.display = 'block';
+            x1.innerHTML = 'O'
+
+            console.log("---------------------------------------------------------")
+            console.log("jogada : "+ jogada)
+            console.log("jogador marcou o " + jogador  + " no bloco 1")
+            bloco1 = 1
+            console.log(bloco1)
+            jogada = jogada + 1
+            jogador = "X"
+            console.log("sua vez")
+            console.log("---------------------------------------------------------")
+            venceu()
+          
+        }
+        else 
+            if(bloco2 == 0){
+                x2.style.display = 'block';
+                x2.innerHTML = 'O';
+
+                console.log("---------------------------------------------------------")
+                console.log("jogada : "+ jogada)
+                console.log("jogador marcou o " + jogador   + " no bloco 2")
+                bloco2 = 1
+                console.log(bloco2)
+                jogada = jogada + 1
+                jogador = "X"
+                console.log("sua vez")
+                console.log("---------------------------------------------------------")
+                venceu()
+            }
+
+        else 
+            if(bloco3 == 0){
+                x3.style.display = 'block';
+                x3.innerHTML = 'O';
+
+                console.log("---------------------------------------------------------")
+                console.log("jogada : "+ jogada)
+                console.log("jogador marcou o " + jogador  + " no bloco 3" )
+                bloco3 = 1
+                console.log(bloco3)
+                jogada = jogada + 1
+                jogador = "X"
+                console.log("sua vez")
+                console.log("---------------------------------------------------------")
+                venceu()
+            }
+
+        else 
+            if(bloco4 == 0){
+                x4.style.display = 'block';
+                x4.innerHTML = 'O';
+
+                console.log("---------------------------------------------------------")
+                console.log("jogada : "+ jogada)
+                console.log("jogador marcou o " + jogador  + " no bloco 4" )
+                bloco4 = 1
+                console.log(bloco4)
+                jogada = jogada + 1
+                jogador = "X"
+                console.log("sua vez")
+                console.log("---------------------------------------------------------")
+                venceu()
+            }
+        
+        else 
+            if(bloco5 == 0){
+                x5.style.display = 'block';
+                x5.innerHTML = 'O';
+
+                console.log("---------------------------------------------------------")
+                console.log("jogada : "+ jogada)
+                console.log("jogador marcou o " + jogador   + " no bloco 5")
+                bloco5 = 1
+                console.log(bloco5)
+                jogada = jogada + 1
+                jogador = "X"
+                console.log("sua vez")
+                console.log("---------------------------------------------------------")
+                venceu()
+            }
+
+        else 
+            if(bloco6 == 0){
+                x6.style.display = 'block';
+                x6.innerHTML = 'O';
+
+                console.log("---------------------------------------------------------")
+                console.log("jogada : "+ jogada)
+                console.log("jogador marcou o " + jogador  + " no bloco 6" )
+                bloco6 = 1
+                console.log(bloco6)
+                jogada = jogada + 1
+                jogador = "X"
+                console.log("sua vez")
+                console.log("---------------------------------------------------------")
+                venceu()
+            }
+
+
+        else 
+            if(bloco7 == 0){
+                x7.style.display = 'block';
+                x7.innerHTML = 'O';
+
+                console.log("---------------------------------------------------------")
+                console.log("jogada : "+ jogada)
+                console.log("jogador marcou o " + jogador  + " no bloco 7" )
+                bloco7 = 1
+                console.log(bloco7)
+                jogada = jogada + 1
+                jogador = "X"
+                console.log("sua vez")
+                console.log("---------------------------------------------------------")
+                venceu()
+            }
+
+        else 
+            if(bloco8 == 0){
+                x8.style.display = 'block';
+                x8.innerHTML = 'O';
+
+                console.log("---------------------------------------------------------")
+                console.log("jogada : "+ jogada)
+                console.log("jogador marcou o " + jogador   + " no bloco 8")
+                bloco8 = 1
+                console.log(bloco8)
+                jogada = jogada + 1
+                jogador = "X"
+                console.log("sua vez")
+                console.log("---------------------------------------------------------")
+                venceu()
+            }
+
+        else 
+            if(bloco9 == 0){
+                x9.style.display = 'block';
+                x9.innerHTML = 'O';
+
+                console.log("---------------------------------------------------------")
+                console.log("jogada : "+ jogada)
+                console.log("jogador marcou o " + jogador   + " no bloco 9")
+                bloco9 = 1
+                console.log(bloco9)
+                jogada = jogada + 1
+                jogador = "X"
+                console.log("sua vez")
+                console.log("---------------------------------------------------------")
+                venceu()
+            }
+
+            
+    }
+
+
+    function venceu(){
+        if(bloco1 == 1 && bloco2 == 1 && bloco3 == 1 && x1.innerHTML == "O" && x2.innerHTML == "O" && x3.innerHTML == "O" && jogo == 0) {
+            quadro1.style.background="#98FB98"
+            quadro2.style.background="#98FB98"
+            quadro3.style.background="#98FB98"
+            console.log("O venceu")
+            jogo = 1;
+
+            function msgEncerramento() {
+                alert("FIM DE JOGO",location.reload())
+                
+            }
+            setTimeout(msgEncerramento, 100)
+
+        }
+        else
+            if(bloco1 == 1 && bloco2 == 1 && bloco3 == 1 && x1.innerHTML == "X" && x2.innerHTML == "X" && x3.innerHTML == "X" && jogo == 0) {
+            quadro1.style.background="#98FB98"
+            quadro2.style.background="#98FB98"
+            quadro3.style.background="#98FB98"
+            console.log("X venceu")
+            jogo = 1;
+
+            function msgEncerramento() {
+                alert("FIM DE JOGO",location.reload())
+                
+            }
+            setTimeout(msgEncerramento, 100)  
+
+        }
+
+
+        if(bloco4 == 1 && bloco5 == 1 && bloco6 == 1 && x4.innerHTML == "O" && x5.innerHTML == "O" && x6.innerHTML == "O" && jogo == 0) {
+            quadro4.style.background="#98FB98"
+            quadro5.style.background="#98FB98"
+            quadro6.style.background="#98FB98"
+            console.log("O venceu")
+            jogo = 1;
+
+            function msgEncerramento() {
+                alert("FIM DE JOGO",location.reload())
+                
+            }
+            setTimeout(msgEncerramento, 100)
+
+        }
+        else
+            if(bloco4 == 1 && bloco5 == 1 && bloco6 == 1 && x4.innerHTML == "X" && x5.innerHTML == "X" && x6.innerHTML == "X" && jogo == 0) {
+            quadro4.style.background="#98FB98"
+            quadro5.style.background="#98FB98"
+            quadro6.style.background="#98FB98"
+            console.log("X venceu")
+            jogo = 1;
+
+            function msgEncerramento() {
+                alert("FIM DE JOGO",location.reload())
+                
+            }
+            setTimeout(msgEncerramento, 100)  
+
+        }
+
+        else
+        if(bloco7 == 1 && bloco8 == 1 && bloco9 == 1 && x7.innerHTML == "O" && x8.innerHTML == "O" && x9.innerHTML == "O" && jogo == 0) {
+            quadro7.style.background="#98FB98"
+            quadro8.style.background="#98FB98"
+            quadro9.style.background="#98FB98"
+            console.log("O venceu")
+            jogo = 1;
+
+            function msgEncerramento() {
+                alert("FIM DE JOGO",location.reload())
+                
+            }
+            setTimeout(msgEncerramento, 100)
+
+        }
+        else
+            if(bloco7 == 1 && bloco8 == 1 && bloco9 == 1 && x7.innerHTML == "X" && x8.innerHTML == "X" && x9.innerHTML == "X" && jogo == 0) {
+            quadro7.style.background="#98FB98"
+            quadro8.style.background="#98FB98"
+            quadro9.style.background="#98FB98"
+            console.log("X venceu")
+            jogo = 1;
+
+            function msgEncerramento() {
+                alert("FIM DE JOGO",location.reload())
+                
+            }
+            setTimeout(msgEncerramento, 100)  
+
+        }
+
+    else
+    if(bloco1 == 1 && bloco4 == 1 && bloco7 == 1 && x1.innerHTML == "O" && x4.innerHTML == "O" && x7.innerHTML == "O" && jogo == 0) {
+            quadro1.style.background="#98FB98"
+            quadro4.style.background="#98FB98"
+            quadro7.style.background="#98FB98"
+            console.log("O venceu")
+            jogo = 1;
+
+            function msgEncerramento() {
+                alert("FIM DE JOGO",location.reload())
+                
+            }
+            setTimeout(msgEncerramento, 100)
+
+        }
+        else
+            if(bloco1 == 1 && bloco4 == 1 && bloco7 == 1 && x1.innerHTML == "X" && x4.innerHTML == "X" && x7.innerHTML == "X" && jogo == 0) {
+            quadro1.style.background="#98FB98"
+            quadro4.style.background="#98FB98"
+            quadro7.style.background="#98FB98"
+            console.log("X venceu")
+            jogo = 1;
+
+            function msgEncerramento() {
+                alert("FIM DE JOGO",location.reload())
+                
+            }
+            setTimeout(msgEncerramento, 100)  
+
+        }
+    else
+        if(bloco2 == 1 && bloco5 == 1 && bloco8 == 1 && x2.innerHTML == "O" && x5.innerHTML == "O" && x8.innerHTML == "O" && jogo == 0) {
+            quadro2.style.background="#98FB98"
+            quadro5.style.background="#98FB98"
+            quadro8.style.background="#98FB98"
+            console.log("O venceu")
+            jogo = 1;
+
+            function msgEncerramento() {
+                alert("FIM DE JOGO",location.reload())
+                
+            }
+            setTimeout(msgEncerramento, 100)
+
+        }
+        else
+            if(bloco2 == 1 && bloco5 == 1 && bloco8 == 1 && x2.innerHTML == "X" && x5.innerHTML == "X" && x8.innerHTML == "X" && jogo == 0) {
+            quadro2.style.background="#98FB98"
+            quadro5.style.background="#98FB98"
+            quadro8.style.background="#98FB98"
+            console.log("X venceu")
+            jogo = 1;
+
+            function msgEncerramento() {
+                alert("FIM DE JOGO",location.reload())
+                
+            }
+            setTimeout(msgEncerramento, 100)  
+
+        }
+
+     else
+        if(bloco3 == 1 && bloco6 == 1 && bloco9 == 1 && x3.innerHTML == "O" && x6.innerHTML == "O" && x9.innerHTML == "O" && jogo == 0) {
+            quadro3.style.background="#98FB98"
+            quadro6.style.background="#98FB98"
+            quadro9.style.background="#98FB98"
+            console.log("O venceu")
+            jogo = 1;
+
+            function msgEncerramento() {
+                alert("FIM DE JOGO",location.reload())
+                
+            }
+            setTimeout(msgEncerramento, 100)
+
+        }
+        else
+            if(bloco3 == 1 && bloco6 == 1 && bloco9 == 1 && x3.innerHTML == "X" && x6.innerHTML == "X" && x9.innerHTML == "X" && jogo == 0) {
+            quadro3.style.background="#98FB98"
+            quadro6.style.background="#98FB98"
+            quadro9.style.background="#98FB98"
+            console.log("X venceu")
+            jogo = 1;
+
+            function msgEncerramento() {
+                alert("FIM DE JOGO",location.reload())
+                
+            }
+            setTimeout(msgEncerramento, 100)  
+
+        }
+         else
+        if(bloco2 == 1 && bloco5 == 1 && bloco8 == 1 && x2.innerHTML == "O" && x5.innerHTML == "O" && x8.innerHTML == "O" && jogo == 0) {
+            quadro2.style.background="#98FB98"
+            quadro5.style.background="#98FB98"
+            quadro8.style.background="#98FB98"
+            console.log("O venceu")
+            jogo = 1;
+
+            function msgEncerramento() {
+                alert("FIM DE JOGO",location.reload())
+                
+            }
+            setTimeout(msgEncerramento, 100)
+
+        }
+        else
+            if(bloco3 == 1 && bloco5 == 1 && bloco7 == 1 && x3.innerHTML == "X" && x5.innerHTML == "X" && x7.innerHTML == "X" && jogo == 0) {
+            quadro3.style.background="#98FB98"
+            quadro5.style.background="#98FB98"
+            quadro7.style.background="#98FB98"
+            console.log("X venceu")
+            jogo = 1;
+
+            function msgEncerramento() {
+                alert("FIM DE JOGO",location.reload())
+                
+            }
+            setTimeout(msgEncerramento, 100)  
+
+        }
+        else
+        if(bloco1 == 1 && bloco5 == 1 && bloco9 == 1 && x1.innerHTML == "O" && x5.innerHTML == "O" && x9.innerHTML == "O" && jogo == 0) {
+            quadro1.style.background="#98FB98"
+            quadro5.style.background="#98FB98"
+            quadro9.style.background="#98FB98"
+            console.log("O venceu")
+            jogo = 1;
+
+            function msgEncerramento() {
+                alert("FIM DE JOGO",location.reload())
+                
+            }
+            setTimeout(msgEncerramento, 100)
+
+        }
+        else
+            if(bloco1 == 1 && bloco5 == 1 && bloco9 == 1 && x1.innerHTML == "X" && x5.innerHTML == "X" && x9.innerHTML == "X" && jogo == 0) {
+            quadro1.style.background="#98FB98"
+            quadro5.style.background="#98FB98"
+            quadro9.style.background="#98FB98"
+            console.log("X venceu")
+            jogo = 1;
+
+            function msgEncerramento() {
+                alert("FIM DE JOGO",location.reload())
+                
+            }
+            setTimeout(msgEncerramento, 100)  
+
+        }
+    }
+
+
+    function Combinacao(){
+        combinacao[contc] = confirmarBloco
+        contc = contc + 1
+    }
+
+    function MostrarCombinacao(){
+        var numerofinal = combinacao.length - 1
+        var contMostrar = 0
+        while(contMostrar <= numerofinal ){
+        console.log(combinacao[contMostrar]);
+        contMostrar = contMostrar + 1
+        }
+    
+    }
 
 
 
