@@ -1,3 +1,12 @@
+<?php  
+
+function teste($numero){
+print($numero);
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,7 +62,7 @@
 
 <div class="row">
     <div class="col-md-4">
-        <center>sdsdsdsdsd</center>
+        <h1></h1>
     </div>
 </div>
 
@@ -123,6 +132,14 @@
             Combinacao()
             venceu()
             ia()
+            <?php 
+                $arquivo = 'arquivo.txt';
+                $conteudo = "1\r\n";
+                
+                $arquivoAberto = fopen($arquivo, 'a');
+                fwrite($arquivoAberto, $conteudo);
+                fclose($arquivoAberto);
+            ?>
             
         }
 
@@ -159,6 +176,13 @@
             venceu()
             Combinacao()
             ia()
+            <?php 
+                 $arquivo = 'arquivo.txt';
+                 $conteudo = "2\r\n"; 
+                 $arquivoAberto = fopen($arquivo, 'a');
+                 fwrite($arquivoAberto, $conteudo);
+                 fclose($arquivoAberto);               
+            ?>
             
         }
 
@@ -193,6 +217,12 @@
                 venceu()
                 ia()
                 venceu()
+                <?php 
+                $arquivo = 'arquivo.txt';
+                $conteudo = "3\r\n";              
+                $arquivoAberto = fopen($arquivo, 'a');
+                fwrite($arquivoAberto, $conteudo);
+            ?>
                 
             }
 
