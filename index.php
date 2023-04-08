@@ -71,6 +71,7 @@
     var combinacao = [0];
     var contc = 0
     var confirmarBloco = 0;
+    var vitoria = 0;
 
     var bloco1 = 0
     var bloco2 = 0
@@ -421,6 +422,8 @@
             jogador = "X"
             console.log("sua vez")
             console.log("---------------------------------------------------------")
+            confirmarBloco = 1;
+            Combinacao()
             venceu()
           
         }
@@ -438,6 +441,8 @@
                 jogador = "X"
                 console.log("sua vez")
                 console.log("---------------------------------------------------------")
+                confirmarBloco = 2;
+                Combinacao()
                 venceu()
             }
 
@@ -455,6 +460,8 @@
                 jogador = "X"
                 console.log("sua vez")
                 console.log("---------------------------------------------------------")
+                confirmarBloco = 3;
+                Combinacao()
                 venceu()
             }
 
@@ -472,6 +479,8 @@
                 jogador = "X"
                 console.log("sua vez")
                 console.log("---------------------------------------------------------")
+                confirmarBloco = 4;
+                Combinacao()
                 venceu()
             }
         
@@ -489,6 +498,8 @@
                 jogador = "X"
                 console.log("sua vez")
                 console.log("---------------------------------------------------------")
+                confirmarBloco = 5;
+                Combinacao()
                 venceu()
             }
 
@@ -506,6 +517,8 @@
                 jogador = "X"
                 console.log("sua vez")
                 console.log("---------------------------------------------------------")
+                confirmarBloco = 6;
+                Combinacao()
                 venceu()
             }
 
@@ -524,6 +537,8 @@
                 jogador = "X"
                 console.log("sua vez")
                 console.log("---------------------------------------------------------")
+                confirmarBloco = 7;
+                Combinacao()
                 venceu()
             }
 
@@ -541,6 +556,8 @@
                 jogador = "X"
                 console.log("sua vez")
                 console.log("---------------------------------------------------------")
+                confirmarBloco = 8;
+                Combinacao()
                 venceu()
             }
 
@@ -558,6 +575,8 @@
                 jogador = "X"
                 console.log("sua vez")
                 console.log("---------------------------------------------------------")
+                confirmarBloco = 9;
+                Combinacao()
                 venceu()
             }
 
@@ -572,6 +591,9 @@
             quadro3.style.background="#98FB98"
             console.log("O venceu")
             jogo = 1;
+            vitoria = "o";
+            Combinacao()
+            MostrarCombinacao()
 
             function msgEncerramento() {
                 alert("FIM DE JOGO",location.reload())
@@ -587,6 +609,9 @@
             quadro3.style.background="#98FB98"
             console.log("X venceu")
             jogo = 1;
+            vitoria = "x";
+            Combinacao()
+            MostrarCombinacao()
 
             function msgEncerramento() {
                 alert("FIM DE JOGO",location.reload())
@@ -603,6 +628,9 @@
             quadro6.style.background="#98FB98"
             console.log("O venceu")
             jogo = 1;
+            vitoria = "o";
+            Combinacao()
+            MostrarCombinacao()
 
             function msgEncerramento() {
                 alert("FIM DE JOGO",location.reload())
@@ -618,6 +646,9 @@
             quadro6.style.background="#98FB98"
             console.log("X venceu")
             jogo = 1;
+            vitoria = "x";
+            Combinacao()
+            MostrarCombinacao()
 
             function msgEncerramento() {
                 alert("FIM DE JOGO",location.reload())
@@ -634,6 +665,9 @@
             quadro9.style.background="#98FB98"
             console.log("O venceu")
             jogo = 1;
+            vitoria = "o";
+            Combinacao()
+            MostrarCombinacao()
 
             function msgEncerramento() {
                 alert("FIM DE JOGO",location.reload())
@@ -649,6 +683,9 @@
             quadro9.style.background="#98FB98"
             console.log("X venceu")
             jogo = 1;
+            vitoria = "x";
+            Combinacao()
+            MostrarCombinacao()
 
             function msgEncerramento() {
                 alert("FIM DE JOGO",location.reload())
@@ -665,6 +702,9 @@
             quadro7.style.background="#98FB98"
             console.log("O venceu")
             jogo = 1;
+            vitoria = "o";
+            Combinacao()
+            MostrarCombinacao()
 
             function msgEncerramento() {
                 alert("FIM DE JOGO",location.reload())
@@ -680,6 +720,9 @@
             quadro7.style.background="#98FB98"
             console.log("X venceu")
             jogo = 1;
+            vitoria = "x";
+            Combinacao()
+            MostrarCombinacao()
 
             function msgEncerramento() {
                 alert("FIM DE JOGO",location.reload())
@@ -695,6 +738,9 @@
             quadro8.style.background="#98FB98"
             console.log("O venceu")
             jogo = 1;
+            vitoria = "o";
+            Combinacao()
+            MostrarCombinacao()
 
             function msgEncerramento() {
                 alert("FIM DE JOGO",location.reload())
@@ -710,6 +756,9 @@
             quadro8.style.background="#98FB98"
             console.log("X venceu")
             jogo = 1;
+            vitoria = "x";
+            Combinacao()
+            MostrarCombinacao()
 
             function msgEncerramento() {
                 alert("FIM DE JOGO",location.reload())
@@ -726,6 +775,9 @@
             quadro9.style.background="#98FB98"
             console.log("O venceu")
             jogo = 1;
+            vitoria = "o";
+            Combinacao()
+            MostrarCombinacao()
 
             function msgEncerramento() {
                 alert("FIM DE JOGO",location.reload())
@@ -741,6 +793,9 @@
             quadro9.style.background="#98FB98"
             console.log("X venceu")
             jogo = 1;
+            vitoria = "x";
+            Combinacao()
+            MostrarCombinacao()
 
             function msgEncerramento() {
                 alert("FIM DE JOGO",location.reload())
@@ -756,6 +811,9 @@
             quadro8.style.background="#98FB98"
             console.log("O venceu")
             jogo = 1;
+            vitoria = "o";
+            Combinacao()
+            MostrarCombinacao()
 
             function msgEncerramento() {
                 alert("FIM DE JOGO",location.reload())
@@ -771,6 +829,9 @@
             quadro7.style.background="#98FB98"
             console.log("X venceu")
             jogo = 1;
+            vitoria = "x";
+            Combinacao()
+            MostrarCombinacao()
 
             function msgEncerramento() {
                 alert("FIM DE JOGO",location.reload())
@@ -786,6 +847,9 @@
             quadro9.style.background="#98FB98"
             console.log("O venceu")
             jogo = 1;
+            vitoria = "o";
+            Combinacao()
+            MostrarCombinacao()
 
             function msgEncerramento() {
                 alert("FIM DE JOGO",location.reload())
@@ -801,6 +865,9 @@
             quadro9.style.background="#98FB98"
             console.log("X venceu")
             jogo = 1;
+            vitoria = "x";
+            Combinacao()
+            MostrarCombinacao()
 
             function msgEncerramento() {
                 alert("FIM DE JOGO",location.reload())
@@ -813,8 +880,13 @@
 
 
     function Combinacao(){
-        combinacao[contc] = confirmarBloco
-        contc = contc + 1
+
+        if(vitoria == "x" || vitoria == "o"){
+            combinacao[contc] = vitoria
+        }
+        else
+            combinacao[contc] = confirmarBloco
+            contc = contc + 1
     }
 
     function MostrarCombinacao(){
@@ -824,6 +896,7 @@
         console.log(combinacao[contMostrar]);
         contMostrar = contMostrar + 1
         }
+        
     
     }
 
