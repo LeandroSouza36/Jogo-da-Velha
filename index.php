@@ -119,6 +119,8 @@ print($numero);
 
     quadro1.onclick=function(){
         if(bloco1==0){
+            localStorage.valor1 = 1
+
             x1.style.display = 'block';
             console.log("---------------------------------------------------------")
             console.log("jogada : "+ jogada)
