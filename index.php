@@ -132,14 +132,6 @@ print($numero);
             Combinacao()
             venceu()
             ia()
-            <?php 
-                $arquivo = 'arquivo.txt';
-                $conteudo = "1\r\n";
-                
-                $arquivoAberto = fopen($arquivo, 'a');
-                fwrite($arquivoAberto, $conteudo);
-                fclose($arquivoAberto);
-            ?>
             
         }
 
@@ -176,13 +168,6 @@ print($numero);
             venceu()
             Combinacao()
             ia()
-            <?php 
-                 $arquivo = 'arquivo.txt';
-                 $conteudo = "2\r\n"; 
-                 $arquivoAberto = fopen($arquivo, 'a');
-                 fwrite($arquivoAberto, $conteudo);
-                 fclose($arquivoAberto);               
-            ?>
             
         }
 
@@ -217,12 +202,6 @@ print($numero);
                 venceu()
                 ia()
                 venceu()
-                <?php 
-                $arquivo = 'arquivo.txt';
-                $conteudo = "3\r\n";              
-                $arquivoAberto = fopen($arquivo, 'a');
-                fwrite($arquivoAberto, $conteudo);
-            ?>
                 
             }
 
@@ -626,7 +605,7 @@ print($numero);
             MostrarCombinacao()
 
             function msgEncerramento() {
-                alert("FIM DE JOGO",location.reload())
+                alert("O VENCEU",location.reload())
                 
             }
             setTimeout(msgEncerramento, 100)
@@ -644,7 +623,7 @@ print($numero);
             MostrarCombinacao()
 
             function msgEncerramento() {
-                alert("FIM DE JOGO",location.reload())
+                alert("X VENCEU",location.reload())
                 
             }
             setTimeout(msgEncerramento, 100)  
@@ -663,7 +642,7 @@ print($numero);
             MostrarCombinacao()
 
             function msgEncerramento() {
-                alert("FIM DE JOGO",location.reload())
+                alert("O VENCEU",location.reload())
                 
             }
             setTimeout(msgEncerramento, 100)
@@ -681,7 +660,7 @@ print($numero);
             MostrarCombinacao()
 
             function msgEncerramento() {
-                alert("FIM DE JOGO",location.reload())
+                alert("X VENCEU",location.reload())
                 
             }
             setTimeout(msgEncerramento, 100)  
@@ -700,7 +679,7 @@ print($numero);
             MostrarCombinacao()
 
             function msgEncerramento() {
-                alert("FIM DE JOGO",location.reload())
+                alert("O VENCEU",location.reload())
                 
             }
             setTimeout(msgEncerramento, 100)
@@ -718,7 +697,7 @@ print($numero);
             MostrarCombinacao()
 
             function msgEncerramento() {
-                alert("FIM DE JOGO",location.reload())
+                alert("X VENCEU",location.reload())
                 
             }
             setTimeout(msgEncerramento, 100)  
@@ -737,7 +716,7 @@ print($numero);
             MostrarCombinacao()
 
             function msgEncerramento() {
-                alert("FIM DE JOGO",location.reload())
+                alert("O VENCEU",location.reload())
                 
             }
             setTimeout(msgEncerramento, 100)
@@ -755,7 +734,7 @@ print($numero);
             MostrarCombinacao()
 
             function msgEncerramento() {
-                alert("FIM DE JOGO",location.reload())
+                alert("X VENCEU",location.reload())
                 
             }
             setTimeout(msgEncerramento, 100)  
@@ -773,7 +752,7 @@ print($numero);
             MostrarCombinacao()
 
             function msgEncerramento() {
-                alert("FIM DE JOGO",location.reload())
+                alert("O VENCEU",location.reload())
                 
             }
             setTimeout(msgEncerramento, 100)
@@ -791,7 +770,7 @@ print($numero);
             MostrarCombinacao()
 
             function msgEncerramento() {
-                alert("FIM DE JOGO",location.reload())
+                alert("X VENCEU",location.reload())
                 
             }
             setTimeout(msgEncerramento, 100)  
@@ -810,7 +789,7 @@ print($numero);
             MostrarCombinacao()
 
             function msgEncerramento() {
-                alert("FIM DE JOGO",location.reload())
+                alert("O VENCEU",location.reload())
                 
             }
             setTimeout(msgEncerramento, 100)
@@ -828,7 +807,7 @@ print($numero);
             MostrarCombinacao()
 
             function msgEncerramento() {
-                alert("FIM DE JOGO",location.reload())
+                alert("X VENCEU",location.reload())
                 
             }
             setTimeout(msgEncerramento, 100)  
@@ -846,7 +825,7 @@ print($numero);
             MostrarCombinacao()
 
             function msgEncerramento() {
-                alert("FIM DE JOGO",location.reload())
+                alert("O VENCEU",location.reload())
                 
             }
             setTimeout(msgEncerramento, 100)
@@ -864,7 +843,7 @@ print($numero);
             MostrarCombinacao()
 
             function msgEncerramento() {
-                alert("FIM DE JOGO",location.reload())
+                alert("X VENCEU",location.reload())
                 
             }
             setTimeout(msgEncerramento, 100)  
@@ -882,7 +861,7 @@ print($numero);
             MostrarCombinacao()
 
             function msgEncerramento() {
-                alert("FIM DE JOGO",location.reload())
+                alert("O VENCEU",location.reload())
                 
             }
             setTimeout(msgEncerramento, 100)
@@ -900,7 +879,7 @@ print($numero);
             MostrarCombinacao()
 
             function msgEncerramento() {
-                alert("FIM DE JOGO",location.reload())
+                alert("X VENCEU",location.reload())
                 
             }
             setTimeout(msgEncerramento, 100)  
