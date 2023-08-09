@@ -4,6 +4,9 @@ function teste($numero){
 print($numero);
 }
 
+include("conexao.php");
+
+
 ?>
 
 
@@ -70,6 +73,10 @@ print($numero);
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
 
+<?php
+
+?>
+
 
 </body>
 
@@ -120,6 +127,16 @@ print($numero);
     quadro1.onclick=function(){
         if(bloco1==0){
             localStorage.valor1 = 1
+
+
+            var bloco1tophp = 1;
+            // Enviar o conteúdo para o servidor usando AJAX
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "receber_conteudo.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.send("conteudo=" + encodeURIComponent(bloco1tophp));
+
+
 
             x1.style.display = 'block';
             console.log("---------------------------------------------------------")
