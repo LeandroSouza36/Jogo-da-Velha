@@ -1,9 +1,9 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["conteudo"])) {
     $conteudoRecebido = $_POST["conteudo"];
-    
+
     include("conexao.php");
-    $sql = "INSERT INTO movimentos (m1) VALUES ($conteudoRecebido)";
+    $sql = "INSERT INTO movimentos (movimento) VALUES ('$conteudoRecebido')";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $conteudoRecebido);
     if ($stmt->execute()) {

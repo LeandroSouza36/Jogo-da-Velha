@@ -129,13 +129,7 @@ include("conexao.php");
             localStorage.valor1 = 1
 
 
-            var bloco1tophp = 1;
-            // Enviar o conteúdo para o servidor usando AJAX
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "receber_conteudo.php", true);
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.send("conteudo=" + encodeURIComponent(bloco1tophp));
-
+            
 
 
             x1.style.display = 'block';
@@ -920,10 +914,17 @@ include("conexao.php");
     function MostrarCombinacao(){
         var numerofinal = combinacao.length - 1
         var contMostrar = 0
-        while(contMostrar <= numerofinal ){
-        console.log(combinacao[contMostrar]);
-        contMostrar = contMostrar + 1
-        }
+         
+        var combinedString = combinacao.join("");
+        console.log(combinedString);
+        ///////////////////
+            // Enviar o conteúdo para o servidor usando AJAX
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "receber_conteudo.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.send("conteudo=" + encodeURIComponent(combinedString));
+
+        ///////////////////
         
     
     }
