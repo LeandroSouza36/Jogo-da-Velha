@@ -1,5 +1,8 @@
-<?php  
 
+
+<?php  
+session_start(); // Inicia a sessão ou retoma a sessão existente
+        
 function teste($numero){
 print($numero);
 }
@@ -98,7 +101,7 @@ include("conexao.php");
     var bloco7 = 0
     var bloco8 = 0
     var bloco9 = 0 
-
+    var blocoAtual = 0;
 
     var quadro1 = document.getElementById("quadro1")
     var x1 = document.getElementById("x1")
@@ -142,6 +145,17 @@ include("conexao.php");
             jogador = "O"
             console.log("---------------------------------------------------------")
             confirmarBloco = 1;
+            blocoAtual = confirmarBloco
+            // Use AJAX para enviar a variável js blocoAtual para variavel PHP
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "variavelblocoAtualParaPHP.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                console.log(xhr.responseText); // Isso exibirá a resposta do PHP (opcional)
+            }
+            };
+            xhr.send("valor=" + encodeURIComponent(blocoAtual));
             Combinacao()
             venceu()
             ia()
@@ -178,6 +192,17 @@ include("conexao.php");
             jogador = "O"
             console.log("---------------------------------------------------------")
             confirmarBloco = 2;
+            blocoAtual = confirmarBloco
+            // Use AJAX para enviar a variável js blocoAtual para variavel PHP
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "variavelblocoAtualParaPHP.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                console.log(xhr.responseText); // Isso exibirá a resposta do PHP (opcional)
+            }
+            };
+            xhr.send("valor=" + encodeURIComponent(blocoAtual));
             venceu()
             Combinacao()
             ia()
@@ -211,6 +236,17 @@ include("conexao.php");
                 jogador = "O"
                 console.log("---------------------------------------------------------")
                 confirmarBloco = 3;
+                blocoAtual = confirmarBloco
+            // Use AJAX para enviar a variável js blocoAtual para variavel PHP
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "variavelblocoAtualParaPHP.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                console.log(xhr.responseText); // Isso exibirá a resposta do PHP (opcional)
+            }
+            };
+            xhr.send("valor=" + encodeURIComponent(blocoAtual));
                 Combinacao()
                 venceu()
                 ia()
@@ -426,7 +462,7 @@ include("conexao.php");
 
 
     function ia(){
-
+        iaBancodeDados()
         if(jogo == 1){
             console.log("hello")
         }
@@ -927,6 +963,38 @@ include("conexao.php");
         ///////////////////
         
     
+    }
+
+    function iaBancodeDados(){
+        <?php
+        // Pegar varial blocoAtual
+        if (isset($_SESSION['variavel'])) {
+            $variavelRecebida = $_SESSION['variavel'];
+            echo "console.log('Variável recebida: " . $variavelRecebida."') \n";
+        } else {
+            echo "Nenhuma variável recebida.";
+        }
+        // Consulta SQL para selecionar registros começando com a letra desejada
+        $sql = "SELECT * FROM movimentos WHERE LEFT(movimento, 1) = '1'";
+        $result = $conn->query($sql);
+        if ($result) {
+            if ($result->num_rows > 0) {
+                // Exibe os dados encontrados
+                echo "console.log('COMBINAÇÕES DISPONIVEIS') \n";
+                while($row = $result->fetch_assoc()) {
+                    
+                    echo "console.log('".$row["movimento"]."') \n";
+                }
+            } else {
+                echo "Nenhum resultado encontrado.";
+            }
+        } else {
+            echo "Erro na consulta: " . $conn->error;
+        }
+        
+        // Fecha a conexão com o banco de dados
+        $conn->close();
+        ?>
     }
 
 
