@@ -9,6 +9,42 @@ print($numero);
 
 include("conexao.php");
 
+// Verifica a conexão
+if ($conn->connect_error) {
+    die("Conexão falhou: " . $conn->connect_error);
+}
+
+// Consulta SQL para selecionar os dados desejados
+$sql = "SELECT * FROM movimentos";
+$result = $conn->query($sql);
+
+// Verifica se há dados retornados
+if ($result->num_rows > 0) {
+    // Nome do arquivo de saída
+    $filename = "dados.txt";
+
+    // Abre o arquivo em modo de escrita
+    $file = fopen($filename, "w");
+
+    // Percorre os resultados e escreve no arquivo
+    while ($row = $result->fetch_assoc()) {
+        // Formata os dados como desejar
+        $data = "movimento: " . $row["movimento"]. "\n";
+
+        // Escreve no arquivo
+        fwrite($file, $data);
+    }
+
+    // Fecha o arquivo
+    fclose($file);
+
+    echo "Dados transcritos com sucesso para $filename";
+} else {
+    echo "Não há dados no banco de dados.";
+}
+
+// Fecha a conexão com o banco de dados
+$conn->close();
 
 ?>
 
@@ -462,7 +498,7 @@ include("conexao.php");
 
 
     function ia(){
-        iaBancodeDados()
+        iaDadosTXT()
         if(jogo == 1){
             console.log("hello")
         }
@@ -965,39 +1001,12 @@ include("conexao.php");
     
     }
 
-    function iaBancodeDados(){
-        <?php
-        // Pegar varial blocoAtual
-        if (isset($_SESSION['variavel'])) {
-            $variavelRecebida = $_SESSION['variavel'];
-            echo "console.log('Variável recebida: " . $variavelRecebida."') \n";
-        } else {
-            echo "Nenhuma variável recebida.";
-        }
-        // Consulta SQL para selecionar registros começando com a letra desejada
-        $sql = "SELECT * FROM movimentos WHERE LEFT(movimento, 1) = '1'";
-        $result = $conn->query($sql);
-        if ($result) {
-            if ($result->num_rows > 0) {
-                // Exibe os dados encontrados
-                echo "console.log('COMBINAÇÕES DISPONIVEIS') \n";
-                while($row = $result->fetch_assoc()) {
-                    
-                    echo "console.log('".$row["movimento"]."') \n";
-                }
-            } else {
-                echo "Nenhum resultado encontrado.";
-            }
-        } else {
-            echo "Erro na consulta: " . $conn->error;
-        }
-        
-        // Fecha a conexão com o banco de dados
-        $conn->close();
-        ?>
+
+    function iaDadosTXT(){
+        // pegar movimentos em DADOS.txt para fazer os movimentos da ia
+        // PASSO 1 - PRINTAR MOVIMENTO ATUAL E ADICIONAR NA VARIAVEL "movimentoAtual"
+        // PASSO 2 - LOCALISAR EM "DADOS.TXT" O MOVIMENTO QUE TEM NO COMEÇO A VARIAVEL "movimentoAtual" e o final o caractere "x", O PRIMEIRO LOCALISADO COLOCAR O MOVIMENTO, QUE É O PROXIMO CARACTERE DEPOIS DE "movimentoAtual" em "DADOS.txt" e adicionar na varival "movimentoDeVitoriaIA" e printar " PROXIMO MOVIMENTO DA VITORIA IA : -- "
     }
-
-
 
 
 
