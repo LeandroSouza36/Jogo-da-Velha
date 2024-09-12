@@ -140,7 +140,11 @@
       <div class="col-md-4"></div>
     </div>
 
-    <div class="code">teste</div>
+
+<?php
+include 'form.php';
+?>
+
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
       integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
@@ -990,19 +994,15 @@
     }
 
     function msgEncerramento() {
-          combinacoes.push(code1);
+          alert("FIM DE JOGO; CODE : " + code1);
+          adicionarCodeForm();
+          //location.reload();
+ 
+    }
 
-
-          const blob = new Blob([JSON.stringify(combinacoes)], { type: 'application/json' });
-          const link = document.createElement('a');
-          link.href = URL.createObjectURL(blob);
-          link.download = 'dados.json';  // nome do arquivo
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-
-          alert("FIM DE JOGO; CODE : " + code1, location.reload());
-        }
-
+    function adicionarCodeForm(){
+        document.getElementById("inputCode1").value = code1;
+        document.getElementById("botaoCodeForm").click();
+      }
   </script>
 </html>
