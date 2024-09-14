@@ -9,8 +9,11 @@
 
 
 
+<h5>CAMINHO ATUAL : </h5>
+<h5 id="code1Atual">0</h5>
 
-<h1 id="code1Atual">ddd</h1>
+<h5>CAMINHOS PARA ADVERSARIO GANHAR : </h5>
+<h5 id="chancesDeGanhar">0</h5>
 <?php
 $cont = 0;
             // Caminho para o arquivo .txt
@@ -22,13 +25,17 @@ $cont = 0;
             // Percorre as linhas do arquivo
             foreach ($conteudo as $linha) {
                 // Verifica se a linha começa com "ascd" e contém "XV"
-                if (strpos($linha, 'XV') !== false) {
+                if (strpos($linha, 'OV') !== false) {
+                  echo "<div style='display:none'>";
                   echo "<br><h5>SEQUENCIA ". $cont ." :</h5><br>";
-                  echo "<h1 id'sequencia". $cont . "'>\n";
+                  echo "<h1 id='sequencia". $cont . "'>";
                   echo $linha;
-                  echo "</h1";
+                  echo "</h1>\n";
+                  echo "</div>";
                   $cont++;
 
                 };
             };
+echo "<h1 id='cont' style='display:none'>$cont</h1>\n";
+
         ?>

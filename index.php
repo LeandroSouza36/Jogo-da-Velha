@@ -503,6 +503,7 @@ include 'form.php';
     function ia() {
       var a = Math.floor(Math.random() * 9) + 1;
       document.getElementById("code1Atual").innerHTML = code1;
+      pegarArrayComBaseNoCode();
       switch (a) {
         case 1:
           if (bloco1 == 0) {
@@ -1006,4 +1007,6 @@ include 'form.php';
       }
       
   </script>
+  <script src="adicionarSequenciasArray.js"></script>
+  <script src="pegarArrayComBaseNoCode.js"></script>
 </html>
