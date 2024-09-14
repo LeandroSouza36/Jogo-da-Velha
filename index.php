@@ -502,7 +502,7 @@ include 'form.php';
 
     function ia() {
       var a = Math.floor(Math.random() * 9) + 1;
-
+      document.getElementById("code1Atual").innerHTML = code1;
       switch (a) {
         case 1:
           if (bloco1 == 0) {
@@ -746,7 +746,7 @@ include 'form.php';
         quadro3.style.background = "#98FB98";
         console.log("O venceu");
         jogo = 1;
-        code1 = code1 + "V";
+        code1 = code1 + "OV";
         setTimeout(msgEncerramento, 100);
       } else if (
         bloco1 == 1 &&
@@ -762,7 +762,7 @@ include 'form.php';
         quadro3.style.background = "#98FB98";
         console.log("X venceu");
         jogo = 1;
-        code1 = code1 + "V";
+        code1 = code1 + "XV";
         setTimeout(msgEncerramento, 100);
       }
 
@@ -780,7 +780,7 @@ include 'form.php';
         quadro6.style.background = "#98FB98";
         console.log("O venceu");
         jogo = 1;
-        code1 = code1 + "V";
+        code1 = code1 + "OV";
         setTimeout(msgEncerramento, 100);
       } else if (
         bloco4 == 1 &&
@@ -796,7 +796,7 @@ include 'form.php';
         quadro6.style.background = "#98FB98";
         console.log("X venceu");
         jogo = 1;
-        code1 = code1 + "V";
+        code1 = code1 + "XV";
         setTimeout(msgEncerramento, 100);
       } else if (
         bloco7 == 1 &&
@@ -812,7 +812,7 @@ include 'form.php';
         quadro9.style.background = "#98FB98";
         console.log("O venceu");
         jogo = 1;
-        code1 = code1 + "V";
+        code1 = code1 + "OV";
         setTimeout(msgEncerramento, 100);
       } else if (
         bloco7 == 1 &&
@@ -828,7 +828,7 @@ include 'form.php';
         quadro9.style.background = "#98FB98";
         console.log("X venceu");
         jogo = 1;
-        code1 = code1 + "V";
+        code1 = code1 + "XV";
         setTimeout(msgEncerramento, 100);
       } else if (
         bloco1 == 1 &&
@@ -844,7 +844,7 @@ include 'form.php';
         quadro7.style.background = "#98FB98";
         console.log("O venceu");
         jogo = 1;
-        code1 = code1 + "V";
+        code1 = code1 + "OV";
         setTimeout(msgEncerramento, 100);
       } else if (
         bloco1 == 1 &&
@@ -860,7 +860,7 @@ include 'form.php';
         quadro7.style.background = "#98FB98";
         console.log("X venceu");
         jogo = 1;
-        code1 = code1 + "V";
+        code1 = code1 + "XV";
         setTimeout(msgEncerramento, 100);
       } else if (
         bloco2 == 1 &&
@@ -876,7 +876,7 @@ include 'form.php';
         quadro8.style.background = "#98FB98";
         console.log("O venceu");
         jogo = 1;
-        code1 = code1 + "V";
+        code1 = code1 + "OV";
         setTimeout(msgEncerramento, 100);
       } else if (
         bloco2 == 1 &&
@@ -892,7 +892,7 @@ include 'form.php';
         quadro8.style.background = "#98FB98";
         console.log("X venceu");
         jogo = 1;
-        code1 = code1 + "V";
+        code1 = code1 + "XV";
         setTimeout(msgEncerramento, 100);
       } else if (
         bloco3 == 1 &&
@@ -908,7 +908,7 @@ include 'form.php';
         quadro9.style.background = "#98FB98";
         console.log("O venceu");
         jogo = 1;
-        code1 = code1 + "V";
+        code1 = code1 + "OV";
         setTimeout(msgEncerramento, 100);
       } else if (
         bloco3 == 1 &&
@@ -924,7 +924,7 @@ include 'form.php';
         quadro9.style.background = "#98FB98";
         console.log("X venceu");
         jogo = 1;
-        code1 = code1 + "V";
+        code1 = code1 + "XV";
         setTimeout(msgEncerramento, 100);
       } else if (
         bloco2 == 1 &&
@@ -940,7 +940,7 @@ include 'form.php';
         quadro8.style.background = "#98FB98";
         console.log("O venceu");
         jogo = 1;
-        code1 = code1 + "V";
+        code1 = code1 + "OV";
         setTimeout(msgEncerramento, 100);
       } else if (
         bloco3 == 1 &&
@@ -956,7 +956,7 @@ include 'form.php';
         quadro7.style.background = "#98FB98";
         console.log("X venceu");
         jogo = 1;
-        code1 = code1 + "V";
+        code1 = code1 + "XV";
         setTimeout(msgEncerramento, 100);
       } else if (
         bloco1 == 1 &&
@@ -972,7 +972,7 @@ include 'form.php';
         quadro9.style.background = "#98FB98";
         console.log("O venceu");
         jogo = 1;
-        code1 = code1 + "V";
+        code1 = code1 + "OV";
         setTimeout(msgEncerramento, 100);
       } else if (
         bloco1 == 1 &&
@@ -988,7 +988,7 @@ include 'form.php';
         quadro9.style.background = "#98FB98";
         console.log("X venceu");
         jogo = 1;
-        code1 = code1 + "V";
+        code1 = code1 + "XV";
         setTimeout(msgEncerramento, 100);
       }
     }
@@ -1004,5 +1004,6 @@ include 'form.php';
         document.getElementById("inputCode1").value = code1;
         document.getElementById("botaoCodeForm").click();
       }
+      
   </script>
 </html>
