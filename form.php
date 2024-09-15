@@ -14,6 +14,9 @@
 
 <h5>CAMINHOS PARA ADVERSARIO GANHAR : </h5>
 <h5 id="chancesDeGanhar">0</h5>
+
+<h5>PRÓXIMO MOVIMENTO : </h5>
+<h5 id="proximoMovimento">0</h5>
 <?php
 $cont = 0;
             // Caminho para o arquivo .txt

@@ -12,6 +12,10 @@ function pegarArrayComBaseNoCode() {
       .filter((char, index) => code1[index] !== char)
       .join("");
     console.log("DIFERENÇA : " + diff); // Retorna a diferença
+
+    let primeiroCaractere = diff.charAt(0); // Ou str[0]
+    console.log("PRÓXIMO MOVIMENTO :" + primeiroCaractere);
+    document.getElementById(`proximoMovimento`).innerHTML = primeiroCaractere;
   } else {
     console.log("Erro: result e code1 devem ser strings");
   }
